@@ -128,18 +128,48 @@ function TocPart({ num, title, subtitle, items }: { num: string; title: string; 
 
 export default function Home() {
   return (
-    <div style={{ background: "var(--bg-base)", minHeight: "100vh", position: "relative" }}>
+    <div style={{ background: "var(--bg-base)", minHeight: "100vh", width: "100%" }}>
       <StarField />
       <Nav />
 
       {/* ── Radial ambient glow ── */}
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1, background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(194,107,47,0.07) 0%, transparent 65%)" }} />
 
-      {/* ════ Content column ════ */}
-      <div className="relative mx-auto px-6 pt-32 pb-24" style={{ zIndex: 2, maxWidth: "720px" }}>
+      {/* ════ Content column — explicitly centered ════ */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          width: "100%",
+          maxWidth: "720px",
+          margin: "0 auto",
+          padding: "8rem 1.5rem 6rem",
+        }}
+      >
 
-        {/* ── Image 01 ── */}
-        <Img src="https://growthled.carrd.co/assets/images/image01.jpg?v=977d0f3d" alt="Growth-Led Product" />
+        {/* ── Image 01: circular sun disc ── */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
+          <div
+            style={{
+              width: "220px",
+              height: "220px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              background: "#fff",
+              boxShadow: "0 0 0 6px rgba(255,255,255,0.08), 0 0 48px rgba(212,168,83,0.25), 0 8px 40px rgba(0,0,0,0.5)",
+              flexShrink: 0,
+            }}
+          >
+            <Image
+              src="https://growthled.carrd.co/assets/images/image01.jpg?v=977d0f3d"
+              alt="Growth-Led Product radiant sun"
+              width={220}
+              height={220}
+              unoptimized
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
+        </div>
 
         {/* ── Hero ── */}
         <Section className="text-center">
@@ -163,10 +193,12 @@ export default function Home() {
 
         {/* ── Methodology ── */}
         <Section>
-          <p className="text-xs tracking-[0.2em] uppercase mb-3 font-medium text-center" style={{ color: "var(--gold)" }}>The Methodology</p>
-          <h2 className="font-display text-center mb-6" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
-            Growth-Led Product: The Infinite Play.
+          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+            The Methodology
           </h2>
+          <h3 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
+            Growth-Led Product: The Infinite Play.
+          </h3>
           <Rule />
           <div className="flex flex-col gap-4 mt-6" style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
             <p>
@@ -181,11 +213,11 @@ export default function Home() {
           </div>
 
           <div className="mt-12">
-            <p className="text-xs tracking-[0.2em] uppercase mb-3 font-medium text-center" style={{ color: "var(--gold)" }}>The Book</p>
-            <h3 className="font-display text-center mb-4" style={{ fontSize: "clamp(1.3rem, 3vw, 1.9rem)", color: "var(--text-primary)", lineHeight: 1.3 }}>
-              <span style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Growth-Led Product: Building Brands, Networks, and Ecosystems That Last
-              </span>
+            <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+              The Book
+            </h2>
+            <h3 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--text-primary)", lineHeight: 1.3 }}>
+              Growth-Led Product: Building Brands, Networks, and Ecosystems That Last
             </h3>
             <Rule />
             <p className="mt-4" style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
@@ -196,7 +228,9 @@ export default function Home() {
           </div>
 
           <div className="mt-12">
-            <p className="text-xs tracking-[0.2em] uppercase mb-3 font-medium text-center" style={{ color: "var(--gold)" }}>The Community</p>
+            <h2 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+              The Community
+            </h2>
             <p style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
               Join a growing network of founders, executives, and business owners putting growth at the center
               of how they build, scale, and transform. The community is where the methodology becomes real —
@@ -210,13 +244,15 @@ export default function Home() {
 
         {/* ── Why Now + Invitation ── */}
         <Section>
-          <p className="text-xs tracking-[0.2em] uppercase mb-3 font-medium text-center" style={{ color: "var(--gold)" }}>Why GLP Matters Now</p>
-          <h2 className="font-display text-center mb-6" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
+          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+            Why GLP Matters Now
+          </h2>
+          <h3 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
             In this climate,{" "}
             <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               old playbooks fail.
             </span>
-          </h2>
+          </h3>
           <Rule />
           <div className="flex flex-col gap-4 mt-6" style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
             <p>
@@ -254,7 +290,9 @@ export default function Home() {
 
           {/* Invitation */}
           <div className="mt-14">
-            <p className="text-xs tracking-[0.2em] uppercase mb-3 font-medium text-center" style={{ color: "var(--gold)" }}>The Invitation</p>
+            <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+              The Invitation
+            </h2>
             <h3 className="font-display text-center mb-6" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "var(--text-primary)", lineHeight: 1.3 }}>
               This is the future of growth.{" "}
               <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -285,14 +323,15 @@ export default function Home() {
 
         {/* ── Table of Contents ── */}
         <Section>
-          <p className="text-xs tracking-[0.2em] uppercase mb-3 font-medium text-center" style={{ color: "var(--gold)" }}>Inside the Book</p>
-          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
+          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
             Growth-Led Product:{" "}
             <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Building Brands, Networks, and Ecosystems First
             </span>
           </h2>
-          <p className="text-center mb-2 mt-2 font-display text-lg" style={{ color: "var(--text-secondary)" }}>Table of Contents</p>
+          <h3 className="font-display text-center mb-5 mt-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+            Table of Contents
+          </h3>
           <Rule />
 
           <div className="mt-6" style={{ borderTop: "1px solid rgba(212,168,83,0.1)" }}>
