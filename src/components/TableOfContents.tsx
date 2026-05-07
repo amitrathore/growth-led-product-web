@@ -180,10 +180,10 @@ function TocItem({ item, index }: { item: typeof toc[0]; index: number }) {
         style={{ maxHeight: open ? "600px" : "0px" }}
       >
         <div
-          className="px-6 md:px-8 pb-8 ml-0 md:ml-15 border-t"
+          className="px-6 md:px-8 pb-8 border-t"
           style={{ borderColor: "var(--border)" }}
         >
-          <ul className="pt-6 flex flex-col gap-2">
+          <ul className="pt-6 flex flex-col gap-2 max-w-3xl mx-auto">
             {item.chapters.map((ch) => (
               <li
                 key={ch}
@@ -219,7 +219,7 @@ export default function TableOfContents() {
         }}
       />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div
           ref={headerRef}
           className="text-center mb-16 transition-all duration-1000"
