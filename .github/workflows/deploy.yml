@@ -33,7 +33,7 @@ jobs:
         run: npm run build
         env:
           # Remove this env var (or set to '') if you use a custom domain
-          NEXT_PUBLIC_BASE_PATH: /growth-led-product-web
+          NEXT_PUBLIC_BASE_PATH: ""
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
