@@ -207,7 +207,7 @@ export default function TableOfContents() {
   return (
     <section
       id="contents"
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-32 overflow-hidden"
       style={{ background: "var(--bg-base)" }}
     >
       <div className="divider-gold absolute top-0 left-0 right-0" />
@@ -222,7 +222,7 @@ export default function TableOfContents() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div
           ref={headerRef}
-          className="text-center mb-16 transition-all duration-1000"
+          className="text-center mb-10 md:mb-16 transition-all duration-1000"
           style={{ opacity: headerVisible ? 1 : 0, transform: headerVisible ? "translateY(0)" : "translateY(32px)" }}
         >
           <p className="text-xs tracking-[0.2em] uppercase mb-4 font-medium" style={{ color: "var(--gold)" }}>

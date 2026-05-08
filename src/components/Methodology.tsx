@@ -52,7 +52,7 @@ export default function Methodology() {
   return (
     <section
       id="methodology"
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-32 overflow-hidden"
       style={{ background: "var(--bg-surface)" }}
     >
       {/* Background accent */}
@@ -75,7 +75,7 @@ export default function Methodology() {
         {/* Header */}
         <div
           ref={headerRef}
-          className="text-center mb-20 transition-all duration-1000"
+          className="text-center mb-10 md:mb-20 transition-all duration-1000"
           style={{ opacity: headerVisible ? 1 : 0, transform: headerVisible ? "translateY(0)" : "translateY(32px)" }}
         >
           <p className="text-xs tracking-[0.2em] uppercase mb-4 font-medium" style={{ color: "var(--gold)" }}>
@@ -108,7 +108,7 @@ export default function Methodology() {
 
         {/* Central quote */}
         <div
-          className="relative glass-card p-10 md:p-14 mb-20 text-center overflow-hidden"
+          className="relative glass-card p-8 md:p-14 mb-10 md:mb-20 text-center overflow-hidden"
           style={{ borderRadius: "2px" }}
         >
           <div

@@ -32,7 +32,7 @@ export default function WhyNow() {
   return (
     <section
       id="why-glp-matters-now"
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-32 overflow-hidden"
       style={{ background: "var(--bg-surface)" }}
     >
       {/* Top divider */}
@@ -59,7 +59,7 @@ export default function WhyNow() {
         {/* Header */}
         <div
           ref={headerRef}
-          className="text-center mb-20 transition-all duration-1000"
+          className="text-center mb-10 md:mb-20 transition-all duration-1000"
           style={{ opacity: headerVisible ? 1 : 0, transform: headerVisible ? "translateY(0)" : "translateY(32px)" }}
         >
           <p className="text-xs tracking-[0.2em] uppercase mb-4 font-medium" style={{ color: "var(--gold)" }}>
@@ -85,7 +85,7 @@ export default function WhyNow() {
         </div>
 
         {/* Signal cards */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-20">
           {signals.map((s, i) => (
             <div
               key={s.label}
@@ -158,7 +158,8 @@ export default function WhyNow() {
                 {i < arr.length - 1 && (
                   <div className="flex flex-col md:flex-row items-center">
                     <div className="h-8 md:h-px md:w-10 w-px" style={{ background: "var(--border-hover)" }} />
-                    <span style={{ color: "var(--gold-dim)", fontSize: "10px" }}>›</span>
+                    <span className="hidden md:inline" style={{ color: "var(--gold-dim)", fontSize: "10px" }}>›</span>
+                    <span className="inline md:hidden" style={{ color: "var(--gold-dim)", fontSize: "10px" }}>↓</span>
                   </div>
                 )}
               </div>

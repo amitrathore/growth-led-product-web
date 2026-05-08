@@ -23,7 +23,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Growth-Led Product. All rights reserved.
         </p>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
           <a
             href="https://linkedin.com"
             target="_blank"
