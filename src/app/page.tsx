@@ -55,7 +55,7 @@ function useFadeIn() {
 }
 
 /* ─── Section wrapper with fade-in ─── */
-function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Section({ children, className = "", style = {} }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   const { ref, vis } = useFadeIn();
   return (
     <div
@@ -65,6 +65,7 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
         opacity: vis ? 1 : 0,
         transform: vis ? "translateY(0)" : "translateY(28px)",
         transition: "opacity 0.9s ease, transform 0.9s ease",
+        ...style,
       }}
     >
       {children}
@@ -75,7 +76,7 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 /* ─── Full-width image divider ─── */
 function Img({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="my-16 overflow-hidden" style={{ border: "1px solid rgba(212,168,83,0.12)" }}>
+    <div style={{ margin: "5rem 0", overflow: "hidden", border: "1px solid rgba(212,168,83,0.12)" }}>
       <Image
         src={src}
         alt={alt}
@@ -91,7 +92,7 @@ function Img({ src, alt }: { src: string; alt: string }) {
 
 /* ─── Decorative heading rule ─── */
 function Rule() {
-  return <div className="my-6" style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(212,168,83,0.35), transparent)" }} />;
+  return <div style={{ margin: "2rem 0", height: "1px", background: "linear-gradient(90deg, transparent, rgba(212,168,83,0.35), transparent)" }} />;
 }
 
 /* ─── TOC accordion item ─── */
@@ -101,8 +102,8 @@ function TocPart({ num, title, subtitle, items }: { num: string; title: string; 
     <div style={{ borderBottom: "1px solid rgba(212,168,83,0.1)" }}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-start justify-between gap-4 py-5 text-left"
-        style={{ background: "none", border: "none", cursor: "pointer" }}
+        className="w-full flex items-start justify-between gap-4 text-left"
+        style={{ paddingTop: "1.5rem", paddingBottom: "1.5rem", background: "none", border: "none", cursor: "pointer" }}
       >
         <div className="flex items-start gap-4">
           <span className="font-display text-2xl" style={{ color: "rgba(212,168,83,0.3)", lineHeight: 1, minWidth: "2rem" }}>{num}</span>
@@ -177,13 +178,13 @@ export default function Home() {
             Growth-Led Product.
           </h1>
           <p
-            className="font-display italic mt-4"
-            style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", lineHeight: 1.4, background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+            className="font-display italic"
+            style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", lineHeight: 1.4, marginTop: "1.25rem", background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
           >
             Continuous Viral Growth in the Age of AI
           </p>
           <Rule />
-          <p style={{ color: "var(--text-secondary)", lineHeight: 1.8, fontSize: "1rem" }}>
+          <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", marginTop: "0.5rem" }}>
             Growth-Led Product is more than a framework — it&apos;s a philosophy, a methodology, and a movement transforming how modern businesses build, scale, and grow.
           </p>
         </Section>
@@ -193,14 +194,14 @@ export default function Home() {
 
         {/* ── Methodology ── */}
         <Section>
-          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
             The Methodology
           </h2>
-          <h3 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
+          <h3 className="font-display text-center" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2, marginTop: "0.6rem" }}>
             Growth-Led Product: The Infinite Play.
           </h3>
           <Rule />
-          <div className="flex flex-col gap-4 mt-6" style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
+          <div style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <p>
               At its core, GLP transforms businesses from being product-first into becoming ecosystem-first.
               Brands become radiant centers of influence. Communities evolve into distribution.
@@ -212,26 +213,26 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12">
-            <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+          <div style={{ marginTop: "4rem" }}>
+            <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
               The Book
             </h2>
-            <h3 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--text-primary)", lineHeight: 1.3 }}>
+            <h3 className="font-display text-center" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--text-primary)", lineHeight: 1.3, marginTop: "0.6rem" }}>
               Growth-Led Product: Building Brands, Networks, and Ecosystems That Last
             </h3>
             <Rule />
-            <p className="mt-4" style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
+            <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem" }}>
               The roadmap to this transformation. A definitive guide for founders, executives, and business owners
               navigating the ecosystem-first era. From first principles to a full playbook — this is the book
               the market has been waiting for.
             </p>
           </div>
 
-          <div className="mt-12">
-            <h2 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+          <div style={{ marginTop: "4rem" }}>
+            <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
               The Community
             </h2>
-            <p style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
+            <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", marginTop: "1.25rem" }}>
               Join a growing network of founders, executives, and business owners putting growth at the center
               of how they build, scale, and transform. The community is where the methodology becomes real —
               where conversations become commerce and leaders become catalysts.
@@ -244,17 +245,17 @@ export default function Home() {
 
         {/* ── Why Now + Invitation ── */}
         <Section>
-          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
             Why GLP Matters Now
           </h2>
-          <h3 className="font-display text-center mb-5" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
+          <h3 className="font-display text-center" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2, marginTop: "0.6rem" }}>
             In this climate,{" "}
             <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               old playbooks fail.
             </span>
           </h3>
           <Rule />
-          <div className="flex flex-col gap-4 mt-6" style={{ color: "var(--text-secondary)", lineHeight: 1.85, fontSize: "1rem" }}>
+          <div style={{ color: "var(--text-secondary)", lineHeight: 1.9, fontSize: "1rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <p>
               Markets are noisier. Buyers are more empowered. AI is reshaping every growth channel.
               In this climate, old playbooks fail.
@@ -266,8 +267,8 @@ export default function Home() {
           </div>
 
           {/* Evolution */}
-          <div className="mt-10 py-8 px-6 text-center" style={{ border: "1px solid rgba(212,168,83,0.12)", background: "rgba(20,18,25,0.5)" }}>
-            <p className="text-xs tracking-[0.18em] uppercase mb-5" style={{ color: "var(--text-muted)" }}>The Evolution</p>
+          <div className="text-center" style={{ marginTop: "3rem", padding: "2.5rem 1.5rem", border: "1px solid rgba(212,168,83,0.12)", background: "rgba(20,18,25,0.5)" }}>
+            <p className="text-xs tracking-[0.18em] uppercase" style={{ color: "var(--text-muted)", marginBottom: "1.5rem" }}>The Evolution</p>
             <div className="flex flex-wrap items-center justify-center gap-2">
               {["Sales-Led", "Marketing-Led", "Product-Led", "Growth-Led"].map((s, i, a) => (
                 <div key={s} className="flex items-center gap-2">
@@ -289,24 +290,24 @@ export default function Home() {
           </div>
 
           {/* Invitation */}
-          <div className="mt-14">
-            <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+          <div style={{ marginTop: "4rem" }}>
+            <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
               The Invitation
             </h2>
-            <h3 className="font-display text-center mb-6" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "var(--text-primary)", lineHeight: 1.3 }}>
+            <h3 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "var(--text-primary)", lineHeight: 1.3, marginTop: "0.6rem" }}>
               This is the future of growth.{" "}
               <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Welcome to Growth-Led Product.
               </span>
             </h3>
             <Rule />
-            <div className="flex flex-col gap-3 mt-6 mb-8">
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "0.5rem", marginBottom: "2.5rem" }}>
               {[
                 { e: "📖", t: "Learn the methodology." },
                 { e: "🌐", t: "Join the community of leaders." },
                 { e: "⚡", t: "Discover how GLP can reshape your brand and business." },
               ].map(({ e, t }) => (
-                <div key={t} className="flex items-start gap-3" style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.7 }}>
+                <div key={t} className="flex items-start gap-3" style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.8 }}>
                   <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{e}</span>
                   <span>{t}</span>
                 </div>
@@ -323,13 +324,13 @@ export default function Home() {
 
         {/* ── Table of Contents ── */}
         <Section>
-          <h2 className="font-display text-center mb-2" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
             Growth-Led Product:{" "}
             <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Building Brands, Networks, and Ecosystems First
             </span>
           </h2>
-          <h3 className="font-display text-center mb-5 mt-2" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
+          <h3 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600, marginTop: "0.6rem" }}>
             Table of Contents
           </h3>
           <Rule />
@@ -403,8 +404,8 @@ export default function Home() {
         <Img src="https://growthled.carrd.co/assets/images/image05.jpg?v=977d0f3d" alt="Growth-Led Product" />
 
         {/* ── Footer ── */}
-        <Section className="text-center pb-8">
-          <div className="flex justify-center gap-6 mb-10">
+        <Section className="text-center" style={{ paddingBottom: "3rem", paddingTop: "1rem" }}>
+          <div className="flex justify-center gap-6" style={{ marginBottom: "3rem" }}>
             {[
               { label: "LinkedIn", href: "https://linkedin.com" },
               { label: "X / Twitter", href: "https://twitter.com" },
