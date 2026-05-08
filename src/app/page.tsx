@@ -179,7 +179,7 @@ export default function Home() {
           </h1>
           <p
             className="font-display italic"
-            style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", lineHeight: 1.4, marginTop: "1.25rem", background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+            style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", lineHeight: 1.4, marginTop: "3rem", background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
           >
             Continuous Viral Growth in the Age of AI
           </p>
@@ -193,7 +193,7 @@ export default function Home() {
         <Img src="https://growthled.carrd.co/assets/images/image02.jpg?v=977d0f3d" alt="The Methodology" />
 
         {/* ── Methodology ── */}
-        <Section>
+        <Section style={{ paddingTop: "3rem" }}>
           <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
             The Methodology
           </h2>
@@ -213,7 +213,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ marginTop: "4rem" }}>
+          <div style={{ marginTop: "6rem" }}>
             <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
               The Book
             </h2>
@@ -228,7 +228,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ marginTop: "4rem" }}>
+          <div style={{ marginTop: "6rem" }}>
             <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
               The Community
             </h2>
@@ -244,7 +244,7 @@ export default function Home() {
         <Img src="https://growthled.carrd.co/assets/images/image03.jpg?v=977d0f3d" alt="Why GLP Matters Now" />
 
         {/* ── Why Now + Invitation ── */}
-        <Section>
+        <Section style={{ paddingTop: "3rem" }}>
           <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
             Why GLP Matters Now
           </h2>
@@ -290,7 +290,7 @@ export default function Home() {
           </div>
 
           {/* Invitation */}
-          <div style={{ marginTop: "4rem" }}>
+          <div style={{ marginTop: "6rem" }}>
             <h2 className="font-display text-center" style={{ fontSize: "clamp(1.4rem, 3vw, 1.75rem)", color: "var(--gold)", lineHeight: 1.3, fontWeight: 600 }}>
               The Invitation
             </h2>
@@ -323,7 +323,7 @@ export default function Home() {
         <Img src="https://growthled.carrd.co/assets/images/image04.jpg?v=977d0f3d" alt="Table of Contents" />
 
         {/* ── Table of Contents ── */}
-        <Section>
+        <Section style={{ paddingTop: "3rem" }}>
           <h2 className="font-display text-center" style={{ fontSize: "clamp(1.7rem, 4vw, 2.4rem)", color: "var(--text-primary)", lineHeight: 1.2 }}>
             Growth-Led Product:{" "}
             <span className="font-display italic" style={{ background: "linear-gradient(135deg, var(--gold-light), var(--amber))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -423,8 +423,8 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <div className="divider-gold mb-8" />
-          <p className="font-display text-2xl mb-1" style={{ color: "var(--gold)" }}>Growth-Led Product.</p>
+          <div className="divider-gold" style={{ marginBottom: "3rem" }} />
+          <p className="font-display text-2xl mb-1" style={{ color: "var(--gold)", marginTop: "3rem" }}>Growth-Led Product.</p>
           <p className="text-xs tracking-widest uppercase" style={{ color: "var(--text-muted)" }}>
             © {new Date().getFullYear()} · All rights reserved
           </p>
