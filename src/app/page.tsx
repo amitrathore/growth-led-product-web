@@ -163,10 +163,12 @@ export default function Home() {
               flexShrink: 0,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo.svg"
+            <Image
+              src="https://growthled.carrd.co/assets/images/image01.jpg?v=977d0f3d"
               alt="Growth-Led Product radiant sun"
+              width={220}
+              height={220}
+              unoptimized
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
             />
           </div>
