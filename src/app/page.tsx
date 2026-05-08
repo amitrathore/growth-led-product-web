@@ -158,7 +158,7 @@ export default function Home() {
               overflow: "hidden",
               background: "#fff",
               border: "1px solid rgba(212,168,83,0.45)",
-              padding: "4px",
+              padding: "2px",
               boxShadow: "0 0 0 6px rgba(255,255,255,0.08), 0 0 48px rgba(212,168,83,0.25), 0 8px 40px rgba(0,0,0,0.5)",
               flexShrink: 0,
             }}
@@ -169,7 +169,7 @@ export default function Home() {
               width={110}
               height={110}
               unoptimized
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", transform: "scale(1.35)", transformOrigin: "center" }}
             />
           </div>
         </div>
