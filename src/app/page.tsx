@@ -76,7 +76,7 @@ function Section({ children, className = "", style = {} }: { children: React.Rea
 /* ─── Full-width image divider ─── */
 function Img({ src, alt }: { src: string; alt: string }) {
   return (
-    <div style={{ margin: "5rem 0", overflow: "hidden", border: "1px solid rgba(212,168,83,0.12)" }}>
+    <div style={{ margin: "5rem 0", overflow: "hidden", border: "1px solid rgba(212,168,83,0.45)" }}>
       <Image
         src={src}
         alt={alt}
@@ -157,6 +157,7 @@ export default function Home() {
               borderRadius: "50%",
               overflow: "hidden",
               background: "#fff",
+              border: "1px solid rgba(212,168,83,0.45)",
               boxShadow: "0 0 0 6px rgba(255,255,255,0.08), 0 0 48px rgba(212,168,83,0.25), 0 8px 40px rgba(0,0,0,0.5)",
               flexShrink: 0,
             }}
