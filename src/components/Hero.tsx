@@ -134,14 +134,14 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="h-px w-12" style={{ background: "var(--gold-dim)" }} />
+          <div className="hidden sm:block h-px w-12" style={{ background: "var(--gold-dim)" }} />
           <span
-            className="text-xs tracking-[0.2em] uppercase font-medium"
+            className="text-xs tracking-[0.2em] uppercase font-medium text-center"
             style={{ color: "var(--gold)" }}
           >
             A Philosophy · A Methodology · A Movement
           </span>
-          <div className="h-px w-12" style={{ background: "var(--gold-dim)" }} />
+          <div className="hidden sm:block h-px w-12" style={{ background: "var(--gold-dim)" }} />
         </div>
 
         <h1

@@ -34,7 +34,7 @@ export default function Invitation() {
   return (
     <section
       id="invitation"
-      className="relative py-40 overflow-hidden"
+      className="relative py-20 md:py-40 overflow-hidden"
       style={{ background: "var(--bg-base)" }}
     >
       {/* Top divider */}

@@ -25,7 +25,7 @@ export default function Community() {
   return (
     <section
       id="community"
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-32 overflow-hidden"
       style={{ background: "var(--bg-surface)" }}
     >
       <div className="divider-gold absolute top-0 left-0 right-0" />
@@ -104,7 +104,7 @@ export default function Community() {
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-4 mt-2">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mt-2">
               <a
                 href="https://linkedin.com"
                 target="_blank"
