@@ -152,8 +152,8 @@ export default function Home() {
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
           <div
             style={{
-              width: "220px",
-              height: "220px",
+              width: "110px",
+              height: "110px",
               borderRadius: "50%",
               overflow: "hidden",
               background: "#fff",
@@ -166,8 +166,8 @@ export default function Home() {
             <Image
               src="https://growthled.carrd.co/assets/images/image01.jpg?v=977d0f3d"
               alt="Growth-Led Product radiant sun"
-              width={220}
-              height={220}
+              width={110}
+              height={110}
               unoptimized
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
             />
