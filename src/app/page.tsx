@@ -408,34 +408,10 @@ export default function Home() {
         {/* ── Provenance note ── */}
         <Section className="text-center" style={{ paddingBottom: "4rem" }}>
           <div className="divider-gold" style={{ marginBottom: "3rem" }} />
-          <p className="text-xs tracking-[0.18em] uppercase mb-5" style={{ color: "var(--text-muted)" }}>
+          <p className="text-xs tracking-[0.18em] uppercase mb-8" style={{ color: "var(--text-muted)" }}>
             A note on origins
           </p>
-          <p className="font-display italic" style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)", color: "var(--text-secondary)", lineHeight: 1.8, maxWidth: "520px", margin: "0 auto" }}>
-            GLP for Software is conceived and brought to you by{" "}
-            <a
-              href="https://www.awake.ventures/p/from-product-led-growth-to-growth-led-product-n8fk56ltr461yban?refBy=Mzg4YmE4ZWViMw"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--gold)", textDecoration: "none", borderBottom: "1px solid rgba(212,168,83,0.35)", transition: "border-color 0.2s ease" }}
-              onMouseEnter={e => (e.currentTarget.style.borderBottomColor = "var(--gold)")}
-              onMouseLeave={e => (e.currentTarget.style.borderBottomColor = "rgba(212,168,83,0.35)")}
-            >
-              Amit Rathore
-            </a>{" "}
-            of{" "}
-            <a
-              href="https://www.awake.ventures/p/from-product-led-growth-to-growth-led-product-n8fk56ltr461yban?refBy=Mzg4YmE4ZWViMw"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--gold)", textDecoration: "none", borderBottom: "1px solid rgba(212,168,83,0.35)", transition: "border-color 0.2s ease" }}
-              onMouseEnter={e => (e.currentTarget.style.borderBottomColor = "var(--gold)")}
-              onMouseLeave={e => (e.currentTarget.style.borderBottomColor = "rgba(212,168,83,0.35)")}
-            >
-              AwakeVC
-            </a>
-            .
-          </p>
+          <ArticleCard />
           <div className="divider-gold" style={{ marginTop: "3rem" }} />
         </Section>
 
@@ -509,5 +485,80 @@ function EmailCapture() {
         Join The Movement
       </button>
     </form>
+  );
+}
+
+/* ─── Article preview card ─── */
+function ArticleCard() {
+  const [hovered, setHovered] = useState(false);
+  const ARTICLE_URL = "https://www.awake.ventures/p/from-product-led-growth-to-growth-led-product-n8fk56ltr461yban?refBy=Mzg4YmE4ZWViMw";
+  return (
+    <a
+      href={ARTICLE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: "block",
+        maxWidth: "520px",
+        margin: "0 auto",
+        textDecoration: "none",
+        borderRadius: "2px",
+        overflow: "hidden",
+        border: hovered ? "1px solid var(--gold)" : "1px solid var(--border-hover)",
+        background: "rgba(20,18,25,0.6)",
+        backdropFilter: "blur(12px)",
+        transform: hovered ? "scale(1.015)" : "scale(1)",
+        transition: "transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
+        boxShadow: hovered
+          ? "0 8px 40px rgba(212,168,83,0.15), 0 2px 12px rgba(0,0,0,0.4)"
+          : "0 2px 16px rgba(0,0,0,0.3)",
+      }}
+    >
+      {/* Image banner */}
+      <div style={{ width: "100%", lineHeight: 0, overflow: "hidden" }}>
+        <img
+          src="/GLP-00-03.webp"
+          alt="From Product-Led Growth to Growth-Led Product"
+          style={{ width: "100%", display: "block", objectFit: "cover" }}
+        />
+      </div>
+      {/* Card body */}
+      <div style={{ padding: "1.5rem 1.75rem 1.75rem" }}>
+        <p
+          className="text-xs tracking-[0.2em] uppercase mb-3"
+          style={{ color: "var(--gold)" }}
+        >
+          From AwakeVC
+        </p>
+        <p
+          className="font-display"
+          style={{
+            fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+            color: "var(--text-primary)",
+            lineHeight: 1.4,
+            marginBottom: "0.75rem",
+          }}
+        >
+          From Product-Led Growth to Growth-Led Product
+        </p>
+        <p
+          className="text-sm"
+          style={{ color: "var(--text-muted)", marginBottom: "1.25rem" }}
+        >
+          Amit Rathore · AwakeVC
+        </p>
+        <span
+          className="text-xs tracking-[0.12em] uppercase"
+          style={{
+            color: hovered ? "var(--gold)" : "var(--gold-dim)",
+            transition: "color 0.3s ease",
+          }}
+        >
+          Read the article →
+        </span>
+      </div>
+    </a>
   );
 }
