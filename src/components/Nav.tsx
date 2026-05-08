@@ -22,7 +22,7 @@ export default function Nav() {
         borderBottom: scrolled ? "1px solid rgba(212,168,83,0.1)" : "none",
       }}
     >
-      <div className="mx-auto px-6 py-4 flex items-center justify-between" style={{ maxWidth: "720px" }}>
+      <div className="flex items-center justify-between px-6 py-4" style={{ maxWidth: "720px", margin: "0 auto", width: "100%" }}>
         <a href="#" className="font-display text-xl font-semibold tracking-wide" style={{ color: "var(--gold)" }}>
           GLP
         </a>
