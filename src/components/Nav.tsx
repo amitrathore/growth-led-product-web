@@ -41,10 +41,10 @@ export default function Nav() {
           ))}
         </div>
         <a
-          href="mailto:?subject=Growth-Led Product Early Access"
+          href="mailto:access@growthledproduct.com?subject=Growth-Led Product Early Access"
           className="btn-outline text-xs py-2 px-5"
         >
-          Get Early Access
+          Join The Movement
         </a>
       </div>
     </nav>

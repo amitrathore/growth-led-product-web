@@ -410,7 +410,7 @@ export default function Home() {
               { label: "LinkedIn", href: "https://linkedin.com" },
               { label: "X / Twitter", href: "https://twitter.com" },
               { label: "Facebook", href: "https://facebook.com" },
-              { label: "Email", href: "mailto:?subject=Growth-Led Product" },
+              { label: "Email", href: "mailto:access@growthledproduct.com?subject=Growth-Led Product Early Access" },
             ].map(({ label, href }) => (
               <a
                 key={label}
@@ -441,7 +441,10 @@ function EmailCapture() {
   const [done, setDone] = useState(false);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) { setDone(true); }
+    if (email.trim()) {
+      window.location.href = `mailto:access@growthledproduct.com?subject=Growth-Led Product Early Access&body=Please add me to the list: ${email}`;
+      setDone(true);
+    }
   };
   if (done) return (
     <div className="text-center py-4 text-sm" style={{ color: "var(--gold)" }}>
@@ -467,7 +470,7 @@ function EmailCapture() {
         onBlur={e => e.currentTarget.style.borderColor = "rgba(212,168,83,0.2)"}
       />
       <button type="submit" className="btn-primary whitespace-nowrap">
-        Get Early Access
+        Join The Movement
       </button>
     </form>
   );
