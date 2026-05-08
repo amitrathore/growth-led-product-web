@@ -405,6 +405,40 @@ export default function Home() {
         {/* ── Image 05 ── */}
         <Img src="https://growthled.carrd.co/assets/images/image05.jpg?v=977d0f3d" alt="Growth-Led Product" />
 
+        {/* ── Provenance note ── */}
+        <Section className="text-center" style={{ paddingBottom: "4rem" }}>
+          <div className="divider-gold" style={{ marginBottom: "3rem" }} />
+          <p className="text-xs tracking-[0.18em] uppercase mb-5" style={{ color: "var(--text-muted)" }}>
+            A note on origins
+          </p>
+          <p className="font-display italic" style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)", color: "var(--text-secondary)", lineHeight: 1.8, maxWidth: "520px", margin: "0 auto" }}>
+            GLP for Software is conceived and brought to you by{" "}
+            <a
+              href="https://www.awake.ventures/p/from-product-led-growth-to-growth-led-product-n8fk56ltr461yban?refBy=Mzg4YmE4ZWViMw"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--gold)", textDecoration: "none", borderBottom: "1px solid rgba(212,168,83,0.35)", transition: "border-color 0.2s ease" }}
+              onMouseEnter={e => (e.currentTarget.style.borderBottomColor = "var(--gold)")}
+              onMouseLeave={e => (e.currentTarget.style.borderBottomColor = "rgba(212,168,83,0.35)")}
+            >
+              Amit Rathore
+            </a>{" "}
+            of{" "}
+            <a
+              href="https://www.awake.ventures/p/from-product-led-growth-to-growth-led-product-n8fk56ltr461yban?refBy=Mzg4YmE4ZWViMw"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--gold)", textDecoration: "none", borderBottom: "1px solid rgba(212,168,83,0.35)", transition: "border-color 0.2s ease" }}
+              onMouseEnter={e => (e.currentTarget.style.borderBottomColor = "var(--gold)")}
+              onMouseLeave={e => (e.currentTarget.style.borderBottomColor = "rgba(212,168,83,0.35)")}
+            >
+              AwakeVC
+            </a>
+            .
+          </p>
+          <div className="divider-gold" style={{ marginTop: "3rem" }} />
+        </Section>
+
         {/* ── Footer ── */}
         <Section className="text-center" style={{ paddingBottom: "3rem", paddingTop: "1rem" }}>
           <div className="flex justify-center gap-6" style={{ marginBottom: "3rem" }}>
