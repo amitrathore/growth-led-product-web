@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { GLP_IMAGES } from "@/lib/glpAssets";
 
 function useFadeIn(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -41,7 +42,7 @@ export default function WhyNow() {
       {/* Large background image with overlay */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Image
-          src="https://growthled.carrd.co/assets/images/image02.jpg?v=977d0f3d"
+          src={GLP_IMAGES.image01}
           alt=""
           fill
           className="object-cover opacity-[0.06]"

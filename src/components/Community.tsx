@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { GLP_IMAGES } from "@/lib/glpAssets";
 
 function useFadeIn(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -129,7 +130,7 @@ export default function Community() {
             <div className="flex flex-col gap-4">
               <div className="overflow-hidden" style={{ border: "1px solid var(--border)" }}>
                 <Image
-                  src="https://growthled.carrd.co/assets/images/image03.jpg?v=977d0f3d"
+                  src={GLP_IMAGES.image02}
                   alt="Growth-Led Product community"
                   width={280}
                   height={320}
@@ -139,7 +140,7 @@ export default function Community() {
               </div>
               <div className="overflow-hidden" style={{ border: "1px solid var(--border)" }}>
                 <Image
-                  src="https://growthled.carrd.co/assets/images/image05.jpg?v=977d0f3d"
+                  src={GLP_IMAGES.image04}
                   alt="Growth-Led Product"
                   width={280}
                   height={200}
@@ -151,7 +152,7 @@ export default function Community() {
             <div className="flex flex-col gap-4 pt-10">
               <div className="overflow-hidden" style={{ border: "1px solid var(--border)" }}>
                 <Image
-                  src="https://growthled.carrd.co/assets/images/image04.jpg?v=977d0f3d"
+                  src={GLP_IMAGES.image03}
                   alt="Growth-Led Product methodology"
                   width={280}
                   height={360}

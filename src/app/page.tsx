@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Nav from "@/components/Nav";
+import { GLP_IMAGES } from "@/lib/glpAssets";
 
 /* ─── Starfield ─── */
 function StarField() {
@@ -80,8 +81,8 @@ function Img({ src, alt }: { src: string; alt: string }) {
       <Image
         src={src}
         alt={alt}
-        width={800}
-        height={500}
+        width={1600}
+        height={900}
         className="w-full h-auto block"
         unoptimized
         style={{ display: "block" }}
@@ -164,7 +165,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="https://growthled.carrd.co/assets/images/image01.jpg?v=977d0f3d"
+              src={GLP_IMAGES.logo}
               alt="Growth-Led Product radiant sun"
               width={110}
               height={110}
@@ -192,7 +193,7 @@ export default function Home() {
         </Section>
 
         {/* ── Image 02 ── */}
-        <Img src="https://growthled.carrd.co/assets/images/image02.jpg?v=977d0f3d" alt="The Methodology" />
+        <Img src={GLP_IMAGES.image01} alt="The Methodology" />
 
         {/* ── Methodology ── */}
         <Section style={{ paddingTop: "3rem" }}>
@@ -243,7 +244,7 @@ export default function Home() {
         </Section>
 
         {/* ── Image 03 ── */}
-        <Img src="https://growthled.carrd.co/assets/images/image03.jpg?v=977d0f3d" alt="Why GLP Matters Now" />
+        <Img src={GLP_IMAGES.image02} alt="Why GLP Matters Now" />
 
         {/* ── Why Now + Invitation ── */}
         <Section style={{ paddingTop: "3rem" }}>
@@ -322,7 +323,7 @@ export default function Home() {
         </Section>
 
         {/* ── Image 04 ── */}
-        <Img src="https://growthled.carrd.co/assets/images/image04.jpg?v=977d0f3d" alt="Table of Contents" />
+        <Img src={GLP_IMAGES.image03} alt="Table of Contents" />
 
         {/* ── Table of Contents ── */}
         <Section style={{ paddingTop: "3rem" }}>
@@ -403,7 +404,7 @@ export default function Home() {
         </Section>
 
         {/* ── Image 05 ── */}
-        <Img src="https://growthled.carrd.co/assets/images/image05.jpg?v=977d0f3d" alt="Growth-Led Product" />
+        <Img src={GLP_IMAGES.image04} alt="Growth-Led Product" />
 
         {/* ── Provenance note ── */}
         <Section className="text-center" style={{ paddingBottom: "4rem" }}>
@@ -518,10 +519,13 @@ function ArticleCard() {
     >
       {/* Image banner */}
       <div style={{ width: "100%", lineHeight: 0, overflow: "hidden" }}>
-        <img
-          src="/GLP-00-03.webp"
+        <Image
+          src={GLP_IMAGES.article}
           alt="From Product-Led Growth to Growth-Led Product"
-          style={{ width: "100%", display: "block", objectFit: "cover" }}
+          width={2048}
+          height={1152}
+          className="block h-auto w-full object-cover"
+          unoptimized
         />
       </div>
       {/* Card body */}

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { GLP_IMAGES } from "@/lib/glpAssets";
 
 function useFadeIn(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -66,10 +67,10 @@ export default function BookSection() {
                 }}
               >
                 <Image
-                  src="https://growthled.carrd.co/assets/images/image01.jpg?v=977d0f3d"
+                  src={GLP_IMAGES.logo}
                   alt="Growth-Led Product book cover"
                   width={380}
-                  height={520}
+                  height={214}
                   className="block w-full h-auto object-cover"
                   unoptimized
                 />
